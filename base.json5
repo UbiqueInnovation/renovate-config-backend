@@ -3,7 +3,10 @@
     "extends": [
         "config:base"
     ],
+    // separate PRs for each major dependency upgrade
+    "separateMultipleMajor": true,
     "packageRules": [
+        // These packages are not public, so renovate does nto find the packages anyway
         {
             "matchPackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
@@ -11,30 +14,12 @@
             ],
             "enabled": false
         },
+        // Separate group for Spring Boot packages
         {
             "matchPackagePrefixes": [
                 "org.springframework.boot:spring-boot"
             ],
-            "groupName": "Spring Boot"
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "groupName": "Dependencies non-major",
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
-            ]
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "groupName": "Dependencies major",
-            "matchUpdateTypes": [
-                "major"
-            ]
+            "groupName": "spring-boot"
         }
     ],
     "schedule": [

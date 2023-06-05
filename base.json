@@ -6,10 +6,37 @@
     "packageRules": [
         {
             "matchPackagePrefixes": [
+                "org.springframework.boot:spring-boot"
+            ],
+            "groupName": "Spring Boot"
+        },
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "Dependencies non-major",
+            "excludePackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
                 "ch.ubique.pushservice:ub-push"
             ],
-            "enabled": false
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ]
+        },
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "Dependencies major",
+            "excludePackagePrefixes": [
+                "ch.ubique:backend-jvm-lib",
+                "ch.ubique.pushservice:ub-push"
+            ],
+            "matchUpdateTypes": [
+                "major",
+                "patch"
+            ]
         }
     ],
     "schedule": [

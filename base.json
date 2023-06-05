@@ -6,7 +6,8 @@
     "packageRules": [
         {
             "matchPackagePrefixes": [
-                "ch.ubique:backend-jvm-lib"
+                "ch.ubique:backend-jvm-lib",
+                "ch.ubique.pushservice:ub-push"
             ],
             "enabled": false
         }

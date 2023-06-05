@@ -6,6 +6,13 @@
     "packageRules": [
         {
             "matchPackagePrefixes": [
+                "ch.ubique:backend-jvm-lib",
+                "ch.ubique.pushservice:ub-push"
+            ],
+            "enabled": false
+        },
+        {
+            "matchPackagePrefixes": [
                 "org.springframework.boot:spring-boot"
             ],
             "groupName": "Spring Boot"
@@ -15,10 +22,6 @@
                 "*"
             ],
             "groupName": "Dependencies non-major",
-            "excludePackagePrefixes": [
-                "ch.ubique:backend-jvm-lib",
-                "ch.ubique.pushservice:ub-push"
-            ],
             "matchUpdateTypes": [
                 "minor",
                 "patch"
@@ -29,13 +32,8 @@
                 "*"
             ],
             "groupName": "Dependencies major",
-            "excludePackagePrefixes": [
-                "ch.ubique:backend-jvm-lib",
-                "ch.ubique.pushservice:ub-push"
-            ],
             "matchUpdateTypes": [
-                "major",
-                "patch"
+                "major"
             ]
         }
     ],

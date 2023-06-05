@@ -17,7 +17,7 @@
             "matchPackagePrefixes": [
                 "org.springframework.boot:spring-boot"
             ],
-            "groupName": "spring-boot",
+            "groupName": "spring-boot"
         },
         {
             "matchPackagePatterns": [
@@ -28,7 +28,7 @@
                 "ch.ubique:backend-jvm-lib",
                 "ch.ubique.pushservice:ub-push",
                 "org.springframework.boot:spring-boot"
-            ],
+            ]
         }
     ],
     "schedule": [

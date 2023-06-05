@@ -3,8 +3,6 @@
     "extends": [
         "config:base"
     ],
-    // separate PRs for each major dependency upgrade
-    "separateMultipleMajor": true,
     "packageRules": [
         // These packages are not public, so renovate does nto find the packages anyway
         {
@@ -19,7 +17,7 @@
             "matchPackagePrefixes": [
                 "org.springframework.boot:spring-boot"
             ],
-            "groupName": "spring-boot"
+            "groupName": "spring-boot",
         },
         {
             "matchPackagePatterns": [

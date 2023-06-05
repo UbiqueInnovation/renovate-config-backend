@@ -20,6 +20,17 @@
                 "org.springframework.boot:spring-boot"
             ],
             "groupName": "spring-boot"
+        },
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "dependencies",
+            "excludePackagePrefixes": [
+                "ch.ubique:backend-jvm-lib",
+                "ch.ubique.pushservice:ub-push"
+            ],
+
         }
     ],
     "schedule": [

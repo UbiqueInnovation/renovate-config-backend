@@ -8,7 +8,9 @@
         {
             "matchPackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
-                "ch.ubique.pushservice:ub-push"
+                "ch.ubique.pushservice:ub-push",
+                "ch.ubique.viadi:viadi",
+                "ch.ethz:eth"
             ],
             "enabled": false
         },
@@ -27,6 +29,8 @@
             "excludePackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
                 "ch.ubique.pushservice:ub-push",
+                "ch.ubique.viadi:viadi",
+                "ch.ethz:eth",
                 "org.springframework.boot:spring-boot"
             ]
         }

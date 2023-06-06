@@ -22,20 +22,20 @@
                 "org.springframework.boot:spring-boot",
                 "org.springframework.cloud:spring-cloud"
             ],
-            "groupName": "spring-boot-cloud"
+            "groupName": "spring-boot-cloud",
+            matchUpdateTypes: [
+                "major",
+                "minor"
+            ],
+            separateMajorMinor: true
         },
+        // Separate group for Spring Boot and CLoud packages (one group because they have to be compatible versions)
         {
-            "matchPackagePatterns": [
-                "*"
+            "matchPackagePrefixes": [
+                "org.springframework.boot:spring-boot",
+                "org.springframework.cloud:spring-cloud"
             ],
-            "groupName": "dependencies",
-            "excludePackagePrefixes": [
-                "ch.ubique:backend-jvm-lib",
-                "ch.ubique.pushservice:ub-push",
-                "ch.ubique.viadi:viadi",
-                "ch.ethz:eth",
-                "org.springframework.boot:spring-boot"
-            ],
+            "groupName": "spring-boot-cloud",
             // autoMerge patches after passing tests by fast-forwarding
             matchUpdateTypes: [
                 "patch"
@@ -61,6 +61,26 @@
                 "minor"
             ],
             separateMajorMinor: true
+        },
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "dependencies",
+            "excludePackagePrefixes": [
+                "ch.ubique:backend-jvm-lib",
+                "ch.ubique.pushservice:ub-push",
+                "ch.ubique.viadi:viadi",
+                "ch.ethz:eth",
+                "org.springframework.boot:spring-boot"
+            ],
+            // autoMerge patches after passing tests by fast-forwarding
+            matchUpdateTypes: [
+                "patch"
+            ],
+            autoMerge: true,
+            autoMergeStartegy: "fast-forward",
+            assignAutomerge: true
         }
     ],
     "schedule": [

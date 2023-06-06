@@ -16,10 +16,11 @@
             ],
             "enabled": false
         },
-        // Separate group for Spring Boot packages
+        // Separate group for Spring Boot and CLoud packages (one group because they have to be compatible versions)
         {
             "matchPackagePrefixes": [
-                "org.springframework.boot:spring-boot"
+                "org.springframework.boot:spring-boot",
+                "org.springframework.cloud:spring-cloud"
             ],
             "groupName": "spring-boot-cloud"
         },

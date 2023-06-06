@@ -79,8 +79,7 @@
                 "patch"
             ],
             autoMerge: true,
-            autoMergeStartegy: "fast-forward",
-            assignAutomerge: true
+            autoMergeStartegy: "fast-forward"
         }
     ],
     "schedule": [

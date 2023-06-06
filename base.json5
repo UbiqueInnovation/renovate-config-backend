@@ -21,7 +21,7 @@
             "matchPackagePrefixes": [
                 "org.springframework.boot:spring-boot"
             ],
-            "groupName": "spring-boot"
+            "groupName": "spring-boot-cloud"
         },
         {
             "matchPackagePatterns": [
@@ -34,7 +34,32 @@
                 "ch.ubique.viadi:viadi",
                 "ch.ethz:eth",
                 "org.springframework.boot:spring-boot"
-            ]
+            ],
+            // autoMerge patches after passing tests by fast-forwarding
+            matchUpdateTypes: [
+                "patch"
+            ],
+            autoMerge: true,
+            autoMergeStartegy: "fast-forward",
+            assignAutomerge: true
+        },
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "dependencies",
+            "excludePackagePrefixes": [
+                "ch.ubique:backend-jvm-lib",
+                "ch.ubique.pushservice:ub-push",
+                "ch.ubique.viadi:viadi",
+                "ch.ethz:eth",
+                "org.springframework.boot:spring-boot"
+            ],
+            matchUpdateTypes: [
+                "major",
+                "minor"
+            ],
+            separateMajorMinor: true
         }
     ],
     "schedule": [

@@ -10,7 +10,9 @@
                 "ch.ubique:backend-jvm-lib",
                 "ch.ubique.pushservice:ub-push",
                 "ch.ubique.viadi:viadi",
-                "ch.ethz:eth"
+                "ch.ethz:eth",
+                "ch.ubique:metar-taf-parser",
+                "ch.ubique:inotify"
             ],
             "enabled": false
         },

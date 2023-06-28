@@ -5,7 +5,7 @@
     ],
     "hostRules": [
         {
-            "matchHost": "https://artifactory.ubique.ch/artifactory/backend",
+            "matchHost": "https://artifactory.ubique.ch/artifactory/backend/",
             "hostType": "mvn",
             "userName": "mend-renovate",
             "encrypted": {

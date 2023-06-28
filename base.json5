@@ -3,6 +3,14 @@
     "extends": [
         "config:base"
     ],
+    "enabledManagers": [
+        "ansible",
+        "docker-compose",
+        "dockerfile",
+        "kubernetes",
+        "maven",
+        "github-actions"
+    ],
     "hostRules": [
         {
             "matchHost": "https://artifactory.ubique.ch/artifactory/backend/",
@@ -17,12 +25,12 @@
         // These packages are not public, so renovate does not find the packages anyway
         {
             "matchPackagePrefixes": [
-//                "ch.ubique:backend-jvm-lib",
-//                "ch.ubique.pushservice:ub-push",
-//                "ch.ubique.viadi:viadi",
-//                "ch.ethz:eth",
-//                "ch.ubique:metar-taf-parser",
-//                "ch.ubique:inotify"
+                //                "ch.ubique:backend-jvm-lib",
+                //                "ch.ubique.pushservice:ub-push",
+                //                "ch.ubique.viadi:viadi",
+                //                "ch.ethz:eth",
+                //                "ch.ubique:metar-taf-parser",
+                //                "ch.ubique:inotify"
             ],
             "enabled": false
         },

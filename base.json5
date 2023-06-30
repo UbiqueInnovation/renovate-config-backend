@@ -29,7 +29,8 @@
                 "ch.ubique.viadi:viadi",
                 "ch.ethz:eth",
                 "ch.ubique:metar-taf-parser",
-                "ch.ubique:inotify"
+                "ch.ubique:inotify",
+                "ch.ubique:passkit4j"
             ],
             "enabled": false
         },

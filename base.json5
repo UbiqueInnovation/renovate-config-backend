@@ -25,6 +25,8 @@
         {
             "matchPackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
+                "ch.sac.shared:sac",
+                "ch.admin.swisstopo.shared:swisstopo",
                 "ch.ubique.pushservice:ub-push",
                 "ch.ubique.viadi:viadi",
                 "ch.ethz:eth",

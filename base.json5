@@ -32,7 +32,8 @@
                 "ch.ethz:eth",
                 "ch.ubique:metar-taf-parser",
                 "ch.ubique:inotify",
-                "ch.ubique:passkit4j"
+                "ch.ubique:passkit4j",
+                "ch.ubique:jmx-monitor"
             ],
             "enabled": false
         },

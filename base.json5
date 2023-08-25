@@ -68,7 +68,7 @@
             "matchPackagePatterns": [
                 "*"
             ],
-            "groupName": "patch-dependencies-automerge",
+            "groupName": "patch-dependencies",
             "excludePackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
                 "ch.ubique.pushservice:ub-push",
@@ -76,12 +76,9 @@
                 "ch.ethz:eth",
                 "org.springframework.boot:spring-boot"
             ],
-            // autoMerge patches after passing tests by fast-forwarding
             matchUpdateTypes: [
                 "patch"
             ],
-            autoMerge: true,
-            autoMergeStartegy: "fast-forward"
         }
     ],
     "schedule": [

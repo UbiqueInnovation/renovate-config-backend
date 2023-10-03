@@ -20,7 +20,34 @@
             }
         }
     ],
+    matchUpdateTypes: [
+        "major",
+        "minor",
+        "patch"
+    ],
+    separateMajorMinor: true,
+    separateMinorPatch: true,
     "packageRules": [
+        // major/minor/patch separate for all packages. Override in specific block below, if undesired
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            matchUpdateTypes: [
+                "major",
+                "minor",
+                "patch"
+            ],
+            separateMajorMinor: true,
+            separateMinorPatch: true
+        },
+        // least specific rules at the top, as renovate does not stop after teh first match and more specific matches at the bottom override previous matches
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "dependencies",
+        },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
             "matchPackagePrefixes": [
@@ -28,9 +55,7 @@
                 "org.springframework.cloud:spring-cloud",
                 "com.azure.spring:spring-cloud-azure"
             ],
-            "groupName": "spring-boot-cloud",
-            separateMajorMinor: true,
-            separateMinorPatch: true
+            "groupName": "spring-boot-cloud"
         },
         // These packages are not public, so renovate needs to check the registryUrls below with the credentials at the top
         {
@@ -49,43 +74,8 @@
             "groupName": "ub-artifactory",
             "registryUrls": [
                 "https://artifactory.ubique.ch/artifactory/backend"
-            ],
-            matchUpdateTypes: [
-                "major",
-                "minor",
-                "patch"
-            ],
-            separateMajorMinor: true,
-            separateMinorPatch: true
-        },
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "groupName": "dependencies",
-            "excludePackagePrefixes": [
-                "org.springframework.boot:spring-boot",
-                "org.springframework.cloud:spring-cloud",
-                "com.azure.spring:spring-cloud-azure",
-                "ch.ubique:backend-jvm-lib",
-                "ch.sac.shared:sac",
-                "ch.admin.swisstopo.shared:swisstopo",
-                "ch.ubique.pushservice:ub-push",
-                "ch.ubique.viadi:viadi",
-                "ch.ethz:eth",
-                "ch.ubique:metar-taf-parser",
-                "ch.ubique:inotify",
-                "ch.ubique:passkit4j",
-                "ch.ubique:jmx-monitor"
-            ],
-            matchUpdateTypes: [
-                "major",
-                "minor",
-                "patch"
-            ],
-            separateMajorMinor: true,
-            separateMinorPatch: true
-        },
+            ]
+        }
     ],
     "schedule": [
         "before 3am on the first day of the month"

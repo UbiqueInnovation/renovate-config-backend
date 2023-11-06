@@ -9,7 +9,8 @@
         "dockerfile",
         "kubernetes",
         "maven",
-        "github-actions"
+        "github-actions",
+        "js"
     ],
     "hostRules": [
         {
@@ -50,6 +51,9 @@
         },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
+            "matchManagers": [
+                "maven"
+            ],
             "matchPackagePrefixes": [
                 "org.springframework.boot:spring-boot",
                 "org.springframework.cloud:spring-cloud",
@@ -59,6 +63,9 @@
         },
         // These packages are not public, so renovate needs to check the registryUrls below with the credentials at the top
         {
+            "matchManagers": [
+                "maven"
+            ],
             "matchPackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
                 "ch.sac.shared:sac",
@@ -75,6 +82,37 @@
             "registryUrls": [
                 "https://artifactory.ubique.ch/artifactory/backend"
             ]
+        },
+        // separate group for javascript "react" packages
+        {
+            "matchManagers": [
+                "js"
+            ],
+            "matchPackagePrefixes": [
+                "react",
+                "@types/react"
+            ],
+            "groupName": "react"
+        },
+        // separate group for javascript "next" packages
+        {
+            "matchManagers": [
+                "js"
+            ],
+            "matchPackagePrefixes": [
+                "next"
+            ],
+            "groupName": "next"
+        },
+        // separate group for javascript "typescript" packages
+        {
+            "matchManagers": [
+                "js"
+            ],
+            "matchPackagePrefixes": [
+                "typescript"
+            ],
+            "groupName": "typescript"
         }
     ],
     "schedule": [

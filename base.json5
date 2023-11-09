@@ -10,7 +10,7 @@
         "kubernetes",
         "maven",
         "github-actions",
-        "js"
+        "npm"
     ],
     "hostRules": [
         {

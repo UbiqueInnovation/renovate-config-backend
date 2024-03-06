@@ -113,6 +113,14 @@
                 "typescript"
             ],
             "groupName": "typescript"
+        },
+        {
+          "packageRules": [
+            {
+              "matchPackageNames": ["edu.ucar:grib"],
+              "allowedVersions": "!/8\\.0\\.29$/"
+            }
+          ]
         }
     ],
     "schedule": [

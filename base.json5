@@ -115,12 +115,20 @@
             "groupName": "typescript"
         },
         {
-          "packageRules": [
-            {
-              "matchPackageNames": ["edu.ucar:grib"],
-              "allowedVersions": "!/8\\.0\\.29$/"
-            }
-          ]
+            "packageRules": [
+                {
+                    "matchPackageNames": [
+                        "edu.ucar:grib"
+                    ],
+                    "allowedVersions": "!/^8\\.0\\.29$/"
+                },
+                {
+                    "matchPackageNames": [
+                        "io.kubernetes:client-java"
+                    ],
+                    "allowedVersions": "!/^\\d+\\.\\d+\\.\\d+-legacy$/"
+                }
+            ]
         }
     ],
     "schedule": [

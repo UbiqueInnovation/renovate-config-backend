@@ -104,6 +104,17 @@
             ],
             "groupName": "next"
         },
+        // separate group for npm "node" packages
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchPackageNames": [
+                "node",
+                "@types/node"
+            ],
+            "groupName": "node"
+        },
         // separate group for npm "typescript" packages
         {
             "matchManagers": [

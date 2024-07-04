@@ -83,33 +83,33 @@
                 "https://artifactory.ubique.ch/artifactory/backend"
             ]
         },
-        // separate group for javascript "react" packages
+        // separate group for npm "react" packages
         {
             "matchManagers": [
-                "js"
+                "npm"
             ],
-            "matchPackagePrefixes": [
+            "matchPackageNames": [
                 "react",
                 "@types/react"
             ],
             "groupName": "react"
         },
-        // separate group for javascript "next" packages
+        // separate group for npm "next" packages
         {
             "matchManagers": [
-                "js"
+                "npm"
             ],
-            "matchPackagePrefixes": [
+            "matchPackageNames": [
                 "next"
             ],
             "groupName": "next"
         },
-        // separate group for javascript "typescript" packages
+        // separate group for npm "typescript" packages
         {
             "matchManagers": [
-                "js"
+                "npm"
             ],
-            "matchPackagePrefixes": [
+            "matchPackageNames": [
                 "typescript"
             ],
             "groupName": "typescript"

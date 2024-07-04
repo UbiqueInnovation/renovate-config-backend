@@ -96,6 +96,16 @@
             ],
             "groupName": "react"
         },
+        // separate group for npm "react-admin" packages
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchPackageNames": [
+                "react-admin"
+            ],
+            "groupName": "react-admin"
+        },
         // separate group for npm "next" packages
         {
             "matchManagers": [

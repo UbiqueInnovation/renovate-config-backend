@@ -137,6 +137,16 @@
             ],
             "groupName": "typescript"
         },
+        // separate group for npm "materialui" packages
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchPackagePrefixes": [
+                "@mui"
+            ],
+            "groupName": "mui"
+        },
         {
             "packageRules": [
                 {

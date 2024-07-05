@@ -127,6 +127,26 @@
             ],
             "groupName": "node"
         },
+        // separate group for npm "yarn" packages
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchPackageNames": [
+                "yarn"
+            ],
+            "groupName": "yarn"
+        },
+        // separate group for npm "pnpm" packages
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "matchPackageNames": [
+                "pnpm",
+            ],
+            "groupName": "pnpm"
+        },
         // separate group for npm "typescript" packages
         {
             "matchManagers": [

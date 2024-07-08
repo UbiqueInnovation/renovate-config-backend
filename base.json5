@@ -30,6 +30,7 @@
     separateMajorMinor: true,
     separateMinorPatch: true,
     "packageRules": [
+        // least specific rules at the top, as renovate does not stop after teh first match and more specific matches at the bottom override previous matches
         // major/minor/patch separate for all packages. Override in specific block below, if undesired
         {
             "matchPackagePatterns": [
@@ -41,14 +42,8 @@
                 "patch"
             ],
             separateMajorMinor: true,
-            separateMinorPatch: true
-        },
-        // least specific rules at the top, as renovate does not stop after teh first match and more specific matches at the bottom override previous matches
-        {
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "groupName": "dependencies",
+            separateMinorPatch: true,
+            "groupName": "dependencies"
         },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
@@ -83,90 +78,6 @@
             "registryUrls": [
                 "https://artifactory.ubique.ch/artifactory/backend"
             ]
-        },
-        // separate group for npm "react" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "react",
-                "react-dom",
-                "@types/react",
-                "@types/react-dom"
-            ],
-            "groupName": "react"
-        },
-        // separate group for npm "react-admin" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "react-admin"
-            ],
-            "groupName": "react-admin"
-        },
-        // separate group for npm "next" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "next"
-            ],
-            "groupName": "next"
-        },
-        // separate group for npm "node" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "node",
-                "@types/node"
-            ],
-            "groupName": "node"
-        },
-        // separate group for npm "yarn" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "yarn"
-            ],
-            "groupName": "yarn"
-        },
-        // separate group for npm "pnpm" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "pnpm",
-            ],
-            "groupName": "pnpm"
-        },
-        // separate group for npm "typescript" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackageNames": [
-                "typescript"
-            ],
-            "groupName": "typescript"
-        },
-        // separate group for npm "materialui" packages
-        {
-            "matchManagers": [
-                "npm"
-            ],
-            "matchPackagePrefixes": [
-                "@mui"
-            ],
-            "groupName": "mui"
         },
         {
             "packageRules": [

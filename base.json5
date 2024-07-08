@@ -30,7 +30,6 @@
     separateMajorMinor: true,
     separateMinorPatch: true,
     "packageRules": [
-        // least specific rules at the top, as renovate does not stop after teh first match and more specific matches at the bottom override previous matches
         // major/minor/patch separate for all packages. Override in specific block below, if undesired
         {
             "matchPackagePatterns": [
@@ -43,7 +42,13 @@
             ],
             separateMajorMinor: true,
             separateMinorPatch: true,
-            "groupName": "dependencies"
+        },
+        // least specific rules at the top, as renovate does not stop after teh first match and more specific matches at the bottom override previous matches
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "groupName": "Dependencies"
         },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
@@ -55,7 +60,7 @@
                 "org.springframework.cloud:spring-cloud",
                 "com.azure.spring:spring-cloud-azure"
             ],
-            "groupName": "spring-boot-cloud"
+            "groupName": "Spring Boot/Cloud dependencies"
         },
         // These packages are not public, so renovate needs to check the registryUrls below with the credentials at the top
         {
@@ -74,7 +79,7 @@
                 "ch.ubique:passkit4j",
                 "ch.ubique:jmx-monitor"
             ],
-            "groupName": "ub-artifactory",
+            "groupName": "UB Artifactory dependencies",
             "registryUrls": [
                 "https://artifactory.ubique.ch/artifactory/backend"
             ]

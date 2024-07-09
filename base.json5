@@ -11,7 +11,8 @@
         "kubernetes",
         "maven",
         "github-actions",
-        "npm"
+        "npm",
+        "pip_requirements"
     ],
     "hostRules": [
         {

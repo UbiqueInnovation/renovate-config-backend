@@ -70,6 +70,7 @@
             ],
             "matchPackagePrefixes": [
                 "ch.ubique:backend-jvm-lib",
+                "ch.ubique.datatrans:datatrans-api-client",
                 "ch.sac.shared:sac",
                 "ch.admin.swisstopo.shared:swisstopo",
                 "ch.ubique.pushservice:ub-push",

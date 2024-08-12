@@ -105,7 +105,7 @@
                     "matchPackageNames": [
                         "mysql"
                     ],
-                    "allowedVersions": "!/^(8\\.4|9.0)$/"
+                    "allowedVersions": "!/^8\\.4$/"
                 }
             ]
         }

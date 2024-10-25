@@ -67,7 +67,7 @@
                 "maven"
             ],
             "matchPackagePrefixes": [
-                "ch.ubique:backend-jvm-lib",
+                "ch.ubique",
                 "ch.ubique.datatrans:datatrans-api-client",
                 "ch.ubique.stnet:schweiztourismus-stnet-api-client",
                 "ch.sac.shared:sac",

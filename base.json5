@@ -67,19 +67,10 @@
                 "maven"
             ],
             "matchPackagePrefixes": [
-                "ch.ubique:backend-jvm-lib",
-                "ch.ubique:uetlib",
-                "ch.ubique.datatrans:datatrans-api-client",
-                "ch.ubique.stnet:schweiztourismus-stnet-api-client",
+                "ch.ubique",
                 "ch.sac.shared:sac",
                 "ch.admin.swisstopo.shared:swisstopo",
-                "ch.ubique.pushservice:ub-push",
-                "ch.ubique.viadi:viadi",
                 "ch.ethz:eth",
-                "ch.ubique:metar-taf-parser",
-                "ch.ubique:inotify",
-                "ch.ubique:passkit4j",
-                "ch.ubique:jmx-monitor"
             ],
             "groupName": "UB Artifactory dependencies",
             "registryUrls": [

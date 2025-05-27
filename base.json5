@@ -19,7 +19,7 @@
             "matchHost": "artifactory.ubique.ch/",
             "userName": "mend-renovate",
             "token": "{{ secrets.UBIQUE_GITHUB_COM_TOKEN }}"
-        }
+        },
     ],
     matchUpdateTypes: [
         "major",
@@ -77,8 +77,30 @@
                 "https://artifactory.ubique.ch/artifactory/backend"
             ]
         },
+        // These packages are not public, so renovate needs to check the registryUrls below with the credentials at the top
+        {
+            "matchManagers": [
+                "maven"
+            ],
+            "matchPackagePrefixes": [
+                "ch.ubique",
+                "ch.sac.shared:sac",
+                "ch.admin.swisstopo.shared:swisstopo",
+                "ch.ethz:eth",
+            ],
+            "groupName": "UB Artifactory dependencies",
+            "registryUrls": [
+                "https://artifactory.ubique.ch/artifactory/backend"
+            ]
+        },
         {
             "packageRules": [
+                {
+                    "matchPackageNames": [
+                        "com.azure:azure-sdk-bom"
+                    ],
+                    "allowedVersions": "1.2.27"
+                },
                 {
                     "matchPackageNames": [
                         "edu.ucar:grib"

@@ -43,7 +43,7 @@
             separateMajorMinor: true,
             separateMinorPatch: true,
         },
-        // least specific rules at the top, as renovate does not stop after teh first match and more specific matches at the bottom override previous matches
+        // least specific rules at the top, as renovate does not stop after the first match and more specific matches at the bottom override previous matches
         {
             "matchPackagePatterns": [
                 "*"
@@ -119,6 +119,12 @@
                         "mysql"
                     ],
                     "allowedVersions": "!/^8\\.4$/"
+                },
+                {
+                    "matchPackageP": [
+                        "/^ch.ubique:uetlib*$/"
+                    ],
+                    "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
                 }
             ]
         }

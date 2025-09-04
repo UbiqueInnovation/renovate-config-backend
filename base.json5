@@ -71,8 +71,7 @@
                 "ch.ubique",
                 "ch.sac.shared:sac",
                 "ch.admin.swisstopo.shared:swisstopo",
-                "ch.ethz:eth",
-                "id.walt.mdoc-credentials:waltid-mdoc-credentials"
+                "ch.ethz:eth"
             ],
             "groupName": "UB Artifactory dependencies",
             "registryUrls": [

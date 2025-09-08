@@ -105,7 +105,7 @@
                     "allowedVersions": "!/^8\\.4$/"
                 },
                 {
-                    "matchPackageP": [
+                    "matchPackageNames": [
                         "/^ch.ubique:uetlib*$/"
                     ],
                     "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"

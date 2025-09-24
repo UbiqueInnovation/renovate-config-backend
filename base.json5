@@ -22,26 +22,26 @@
             "token": "{{ secrets.UBIQUE_GITHUB_COM_TOKEN }}"
         },
     ],
-    matchUpdateTypes: [
+    "matchUpdateTypes": [
         "major",
         "minor",
         "patch"
     ],
-    separateMajorMinor: true,
-    separateMinorPatch: true,
+    "separateMajorMinor": true,
+    "separateMinorPatch": true,
     "packageRules": [
         // major/minor/patch separate for all packages. Override in specific block below, if undesired
         {
             "matchPackagePatterns": [
                 "*"
             ],
-            matchUpdateTypes: [
+            "matchUpdateTypes": [
                 "major",
                 "minor",
                 "patch"
             ],
-            separateMajorMinor: true,
-            separateMinorPatch: true,
+            "separateMajorMinor": true,
+            "separateMinorPatch": true,
         },
         // least specific rules at the top, as renovate does not stop after the first match and more specific matches at the bottom override previous matches
         {
@@ -79,41 +79,29 @@
             ]
         },
         {
-            "packageRules": [
-                {
-                    "matchPackageNames": [
-                        "com.azure:azure-sdk-bom"
-                    ],
-                    "allowedVersions": "1.2.27"
-                },
-                {
-                    "matchPackageNames": [
-                        "edu.ucar:grib"
-                    ],
-                    "allowedVersions": "!/^8\\.0\\.29$/"
-                },
-                {
-                    "matchPackageNames": [
-                        "io.kubernetes:client-java"
-                    ],
-                    "allowedVersions": "!/^\\d+\\.\\d+\\.\\d+-legacy$/"
-                },
-                {
-                    "matchPackageNames": [
-                        "mysql"
-                    ],
-                    "allowedVersions": "!/^8\\.4$/"
-                },
-                {
-                    "matchPackageNames": [
-                        "/^ch.ubique:uetlib*$/"
-                    ],
-                    "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
-                }
-            ]
+            "matchPackageNames": [
+                "com.azure:azure-sdk-bom"
+            ],
+            "allowedVersions": "1.2.27"
+        },
+        {
+            "matchPackageNames": [
+                "edu.ucar:grib"
+            ],
+            "allowedVersions": "!/^8\\.*$/"
+        },
+        {
+            "matchPackageNames": [
+                "io.kubernetes:client-java"
+            ],
+            "allowedVersions": "!/^\\d+\\.\\d+\\.\\d+-legacy$/"
+        },
+        // only non-prerelease versions allowed for ch.ubique:uetlib*
+        {
+            "matchPackageNames": [
+                "/^ch.ubique:uetlib*$/"
+            ],
+            "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
         }
-    ],
-    "schedule": [
-        "before 3am on the first day of the month"
     ]
 }

@@ -15,30 +15,6 @@
         "poetry"
     ],
     "packageRules": [
-        {
-            "manager": "ansible",
-            "groupName": "Ansible Updates"
-        },
-        {
-            "manager": "kubernetes",
-            "groupName": "Kubernetes Updates"
-        },
-        {
-            "manager": "maven",
-            "groupName": "Maven Updates"
-        },
-        {
-            "manager": "npm",
-            "groupName": "NPM Updates"
-        },
-        {
-            "manager": "pip_requirements",
-            "groupName": "Pip Requirements Updates"
-        },
-        {
-            "manager": "poetry",
-            "groupName": "Poetry Updates"
-        },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
             "matchManagers": [

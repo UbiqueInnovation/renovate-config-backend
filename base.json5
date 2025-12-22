@@ -75,7 +75,7 @@
                 "maven"
             ],
             "matchPackageNames": [
-                "/^ch\\.ubique:backend\\-jvm\\-lib\\.*$/",
+                "/^ch\\.ubique:backend-jvm-lib\\.*$/",
             ],
             "abandonmentThreshold": "1 year",
             "replacementName": "ch.ubique:uetlib",

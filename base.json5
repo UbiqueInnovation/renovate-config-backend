@@ -65,7 +65,7 @@
         // only non-prerelease versions allowed for ch.ubique:uetlib*
         {
             "matchPackageNames": [
-                "/^ch.ubique:uetlib*$/"
+                "/^ch\\.ubique:uetlib\\.*$/"
             ],
             "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
         },
@@ -75,7 +75,7 @@
                 "maven"
             ],
             "matchPackageNames": [
-                "/^ch.ubique:backend-jvm-lib*$/",
+                "/^ch\\.ubique:backend\\-jvm\\-lib\\.*$/",
             ],
             "abandonmentThreshold": "1 year",
             "replacementName": "ch.ubique:uetlib",

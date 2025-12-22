@@ -18,7 +18,7 @@
     "packageRules": [
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
-            "matchManagers": [
+            "matchDatasources": [
                 "maven"
             ],
             "matchPackagePrefixes": [
@@ -30,7 +30,7 @@
         },
         // These packages are not public, so renovate needs to check the registryUrls below with the credentials at the top
         {
-            "matchManagers": [
+            "matchDatasources": [
                 "maven"
             ],
             "matchPackagePrefixes": [

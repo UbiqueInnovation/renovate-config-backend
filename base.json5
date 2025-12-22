@@ -9,6 +9,7 @@
         "dockerfile",
         "kubernetes",
         "maven",
+        "gradle",
         "github-actions",
         "npm",
         "pip_requirements",

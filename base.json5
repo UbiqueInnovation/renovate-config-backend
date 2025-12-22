@@ -65,9 +65,26 @@
         // only non-prerelease versions allowed for ch.ubique:uetlib*
         {
             "matchPackageNames": [
-                "/^ch.ubique:uetlib*$/"
+                "ch.ubique:uetlib"
             ],
             "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
+        },
+        // backend-lib should be replaced
+        {
+            "matchDatasources": [
+                "maven"
+            ],
+            "matchPackageNames": [
+                "ch.ubique:backend-jvm-lib"
+            ],
+            "abandonmentThreshold": "1 year",
+            "replacementName": "ch.ubique:uetlib",
+            "labels": [
+                "dependencies",
+                "eol",
+                "migration"
+            ],
+            "groupName": "Replace Backend-Lib with Uetlib"
         }
     ]
 }

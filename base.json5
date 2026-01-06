@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        'github>UbiqueInnovation/renovate-config-systems:base.json5',
+        "github>UbiqueInnovation/renovate-config-systems:base.json5"
     ],
     "enabledManagers": [
         "ansible",
@@ -21,27 +21,27 @@
             "matchDatasources": [
                 "maven"
             ],
-            "matchPackagePrefixes": [
-                "org.springframework.boot:spring-boot",
-                "org.springframework.cloud:spring-cloud",
-                "com.azure.spring:spring-cloud-azure"
-            ],
-            "groupName": "Spring Boot/Cloud dependencies"
+            "groupName": "Spring Boot/Cloud dependencies",
+            "matchPackageNames": [
+                "org.springframework.boot:spring-boot{/,}**",
+                "org.springframework.cloud:spring-cloud{/,}**",
+                "com.azure.spring:spring-cloud-azure{/,}**"
+            ]
         },
         // These packages are not public, so renovate needs to check the registryUrls below with the credentials at the top
         {
             "matchDatasources": [
                 "maven"
             ],
-            "matchPackagePrefixes": [
-                "ch.ubique",
-                "ch.sac.shared:sac",
-                "ch.admin.swisstopo.shared:swisstopo",
-                "ch.ethz:eth"
-            ],
             "groupName": "UB Artifactory dependencies",
             "registryUrls": [
                 "https://artifactory.ubique.ch/artifactory/ubique"
+            ],
+            "matchPackageNames": [
+                "ch.ubique{/,}**",
+                "ch.sac.shared:sac{/,}**",
+                "ch.admin.swisstopo.shared:swisstopo{/,}**",
+                "ch.ethz:eth{/,}**"
             ]
         },
         {
@@ -75,7 +75,7 @@
                 "maven"
             ],
             "matchPackageNames": [
-                "/^ch\\.ubique:backend-jvm-lib\\.*$/",
+                "/^ch\\.ubique:backend-jvm-lib\\.*$/"
             ],
             "abandonmentThreshold": "1 year",
             "replacementName": "ch.ubique:uetlib",

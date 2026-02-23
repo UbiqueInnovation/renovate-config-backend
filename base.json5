@@ -62,6 +62,13 @@
             ],
             "allowedVersions": "!/^\\d+\\.\\d+\\.\\d+-legacy$/"
         },
+        // only non-prerelease versions allowed for commons-cli:commons-cli
+        {
+            "matchPackageNames": [
+                "commons-cli:commons-cli"
+            ],
+            "allowedVersions": "!/^\\d+\\.\\d+\\.\\d+-\\.*$/"
+        },
         // only non-prerelease versions allowed for ch.ubique:uetlib*
         {
             "matchPackageNames": [
@@ -71,9 +78,6 @@
         },
         // backend-lib should be replaced
         {
-            "matchDatasources": [
-                "maven"
-            ],
             "matchPackageNames": [
                 "/^ch\\.ubique:backend-jvm-lib\\.*$/"
             ],

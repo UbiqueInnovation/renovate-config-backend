@@ -61,7 +61,7 @@
             "matchPackageNames": [
                 "commons-cli:commons-cli"
             ],
-            "allowedVersions": "!/^\\d+\\.\\d+\\.\\d+-\\.*$/"
+            "allowedVersions": "!/-.+$/"
         },
         // only non-prerelease versions allowed for ch.ubique:uetlib*
         {

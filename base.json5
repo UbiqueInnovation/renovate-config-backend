@@ -16,14 +16,6 @@
         "poetry"
     ],
     "packageRules": [
-        {
-            "matchDatasources": [
-                "maven"
-            ],
-            "registryUrls": [
-                "https://artifactory.ubique.ch/artifactory/ubique"
-            ]
-        },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
             "matchDatasources": [

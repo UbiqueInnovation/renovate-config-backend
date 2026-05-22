@@ -13,7 +13,9 @@
         "github-actions",
         "npm",
         "pip_requirements",
-        "poetry"
+        "poetry",
+        "ansible-galaxy",
+        "custom.regex"
     ],
     "packageRules": [
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)

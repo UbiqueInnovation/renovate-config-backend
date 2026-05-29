@@ -66,6 +66,7 @@
             ],
             "allowedVersions": "!/-.+$/"
         },
+
         // only non-prerelease versions allowed for ch.ubique:uetlib*
         {
             "matchPackageNames": [
@@ -73,19 +74,19 @@
             ],
             "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
         },
-        // backend-lib should be replaced
+
+        // OUTDATED: backend-jvm-lib has been superseded by uetlib.
+        // Migration is intentionally manual because several legacy artifacts
+        // do not have a safe one-to-one automated replacement.
         {
+            "description": "OUTDATED: backend-jvm-lib has been replaced by uetlib; manual migration required",
+            "matchDatasources": [
+                "maven"
+            ],
             "matchPackageNames": [
-                "/^ch\\.ubique:backend-jvm-lib.*$/"
+                "/^ch\\.ubique:backend-jvm-lib.*/"
             ],
-            "abandonmentThreshold": "1 year",
-            "replacementName": "ch.ubique:uetlib",
-            "labels": [
-                "dependencies",
-                "eol",
-                "migration"
-            ],
-            "groupName": "Replace Backend-Lib with Uetlib"
+            "abandonmentThreshold": "1 day"
         }
     ]
 }

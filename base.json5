@@ -36,6 +36,7 @@
                 "maven"
             ],
             "groupName": "UB Artifactory dependencies",
+            "minimumReleaseAge": "1 day",
             "registryUrls": [
                 "https://artifactory.ubique.ch/artifactory/ubique"
             ],
@@ -50,7 +51,7 @@
             "matchPackageNames": [
                 "edu.ucar:grib"
             ],
-            "allowedVersions": "!/^8\\.*$/"
+            "allowedVersions": "!/^8\\..*$/"
         },
         {
             "matchPackageNames": [
@@ -68,14 +69,14 @@
         // only non-prerelease versions allowed for ch.ubique:uetlib*
         {
             "matchPackageNames": [
-                "/^ch\\.ubique:uetlib\\.*$/"
+                "/^ch\\.ubique:uetlib.*$/"
             ],
             "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
         },
         // backend-lib should be replaced
         {
             "matchPackageNames": [
-                "/^ch\\.ubique:backend-jvm-lib\\.*$/"
+                "/^ch\\.ubique:backend-jvm-lib.*$/"
             ],
             "abandonmentThreshold": "1 year",
             "replacementName": "ch.ubique:uetlib",

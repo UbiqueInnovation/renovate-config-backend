@@ -18,9 +18,25 @@
         "custom.regex",
         "pre-commit"
     ],
+    // pre-commit is currently still in beta testing
     "pre-commit": {
         "enabled": true
     },
+    "customManagers": [
+        {
+            // Detect Docker image versions used by Testcontainers in Java source files.
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/(^|/)src/(main|test)/java/.*\\.java$/"
+            ],
+            "matchStrings": [
+                "DockerImageName\\.parse\\(\\s*\"(?<depName>[^\"\\s]+):(?<currentValue>[A-Za-z0-9_][A-Za-z0-9_.-]*)\"\\s*\\)",
+                "new\\s+[A-Za-z0-9_$.]+Container(?:\\s*<[^>]*>)?\\s*\\(\\s*\"(?<depName>[^\"\\s]+):(?<currentValue>[A-Za-z0-9_][A-Za-z0-9_.-]*)\"\\s*\\)"
+            ],
+            "datasourceTemplate": "docker",
+            "depTypeTemplate": "testcontainers"
+        }
+    ],
     "packageRules": [
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {

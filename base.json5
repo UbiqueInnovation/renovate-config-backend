@@ -70,6 +70,25 @@
                 "/^ch\\.ubique:uetlib.*$/"
             ]
         },
+        // Auto-merge patch updates for UB Artifactory dependencies and Spring Boot (except CalVer packages)
+        {
+            "matchDatasources": [
+                "maven"
+            ],
+            "matchPackageNames": [
+                "ch.ubique{/,}**",
+                "ch.sac.shared:sac{/,}**",
+                "ch.admin.swisstopo.shared:swisstopo{/,}**",
+                "ch.ethz:eth{/,}**",
+                "org.springframework.boot:spring-boot{/,}**"
+            ],
+            "excludePackageNames": [
+                "ch.ubique:uetlib-bom",
+                "ch.ubique:uetlib-spring-boot-starter-parent"
+            ],
+            "matchUpdateTypes": ["patch"],
+            "automerge": true
+        },
         {
             "matchPackageNames": [
                 "edu.ucar:grib"
@@ -104,6 +123,7 @@
             ],
             "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
         },
+
         // OUTDATED: backend-jvm-lib has been superseded by uetlib.
         // Migration is intentionally manual because several legacy artifacts
         // do not have a safe one-to-one automated replacement.

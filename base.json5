@@ -22,6 +22,12 @@
     "pre-commit": {
         "enabled": true
     },
+    "kubernetes": {
+        "managerFilePatterns": [
+            "/(^|/)(deployment|service)\\.ya?ml$/",
+            "/(^|/)(k8s|manifests)/.+\\.ya?ml$/"
+        ]
+    },
     "customManagers": [
         {
             // Detect Docker image versions used by Testcontainers in Java source files.
@@ -86,7 +92,9 @@
                 "ch.ubique:uetlib-bom",
                 "ch.ubique:uetlib-spring-boot-starter-parent"
             ],
-            "matchUpdateTypes": ["patch"],
+            "matchUpdateTypes": [
+                "patch"
+            ],
             "automerge": true
         },
         {
@@ -123,7 +131,6 @@
             ],
             "allowedVersions": "/^\\d+\\.\\d+\\.\\d+$/"
         },
-
         // OUTDATED: backend-jvm-lib has been superseded by uetlib.
         // Migration is intentionally manual because several legacy artifacts
         // do not have a safe one-to-one automated replacement.
@@ -146,8 +153,10 @@
             "abandonmentThreshold": "1 day"
         },
         {
-          "matchManagers": ["pep621"],
-          "rangeStrategy": "update-lockfile"
+            "matchManagers": [
+                "pep621"
+            ],
+            "rangeStrategy": "update-lockfile"
         }
     ]
 }

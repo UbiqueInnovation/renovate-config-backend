@@ -24,7 +24,7 @@
     },
     "kubernetes": {
         "managerFilePatterns": [
-            "/(^|/)(deployment|service)\\.ya?ml$/",
+             "/(^|/)(deployment|ingress|service)\\.ya?ml$/",
             "/(^|/)(k8s|manifests)/.+\\.ya?ml$/"
         ]
     },

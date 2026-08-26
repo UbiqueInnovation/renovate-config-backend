@@ -41,6 +41,22 @@
             ],
             "datasourceTemplate": "docker",
             "depTypeTemplate": "testcontainers"
+        },
+        {
+            // stCarolas/setup-maven's `maven-version` input isn't tracked by any
+            // built-in manager, so this teaches Renovate to treat it as a real
+            // Maven Central artifact and open PRs when a new Maven version ships.
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/^\\.github/workflows/.*\\.ya?ml$/"
+            ],
+            "matchStrings": [
+                "maven-version:\\s*[\"']?(?<currentValue>[\\d.]+)[\"']?"
+            ],
+            "datasourceTemplate": "maven",
+            "depNameTemplate": "maven",
+            "packageNameTemplate": "org.apache.maven:apache-maven",
+            "versioningTemplate": "maven"
         }
     ],
     "packageRules": [

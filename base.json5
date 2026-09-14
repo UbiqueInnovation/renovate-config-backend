@@ -24,22 +24,25 @@
     },
     "kubernetes": {
         "managerFilePatterns": [
-             "/(^|/)(deployment|ingress|service)\\.ya?ml$/",
+            "/(^|/)(deployment|ingress|service)\\.ya?ml$/",
             "/(^|/)(k8s|manifests)/.+\\.ya?ml$/"
         ]
     },
     "customManagers": [
         {
             // Detect Docker image versions used by Testcontainers in Java source files.
+            // Tag and digest are both optional, so untagged images (implicitly `latest`)
+            // and digest-pinned images are caught too.
             "customType": "regex",
             "managerFilePatterns": [
                 "/(^|/)src/(main|test)/java/.*\\.java$/"
             ],
             "matchStrings": [
-                "DockerImageName\\.parse\\(\\s*\"(?<depName>[^\"\\s]+):(?<currentValue>[A-Za-z0-9_][A-Za-z0-9_.-]*)\"\\s*\\)",
-                "new\\s+[A-Za-z0-9_$.]+Container(?:\\s*<[^>]*>)?\\s*\\(\\s*\"(?<depName>[^\"\\s]+):(?<currentValue>[A-Za-z0-9_][A-Za-z0-9_.-]*)\"\\s*\\)"
+                "DockerImageName\\.parse\\(\\s*\"(?<depName>[^\"\\s]+?)(?::(?<currentValue>[A-Za-z0-9_][A-Za-z0-9_.-]*))?(?:@(?<currentDigest>sha256:[a-f0-9]+))?\"\\s*\\)",
+                "new\\s+[A-Za-z0-9_$.]+Container(?:\\s*<[^>]*>)?\\s*\\(\\s*\"(?<depName>[^\"\\s]+?)(?::(?<currentValue>[A-Za-z0-9_][A-Za-z0-9_.-]*))?(?:@(?<currentDigest>sha256:[a-f0-9]+))?\"\\s*\\)"
             ],
             "datasourceTemplate": "docker",
+            "currentValueTemplate": "{{#if currentValue}}{{{currentValue}}}{{else}}latest{{/if}}",
             "depTypeTemplate": "testcontainers"
         },
         {

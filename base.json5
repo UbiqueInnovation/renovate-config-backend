@@ -63,6 +63,15 @@
         }
     ],
     "packageRules": [
+        // Route every Maven lookup through Ubique Artifactory.
+        {
+            "matchDatasources": [
+                "maven"
+            ],
+            "registryUrls": [
+                "https://artifactory.ubique.ch/artifactory/ubique"
+            ]
+        },
         // Separate group for Spring Boot and Cloud packages (one group because they have to be compatible versions)
         {
             "matchDatasources": [
@@ -82,9 +91,6 @@
             ],
             "groupName": "UB Artifactory dependencies",
             "minimumReleaseAge": "4 hours",
-            "registryUrls": [
-                "https://artifactory.ubique.ch/artifactory/ubique"
-            ],
             "matchPackageNames": [
                 "ch.ubique{/,}**",
                 "ch.sac.shared:sac{/,}**",

@@ -1,7 +1,9 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "github>UbiqueInnovation/renovate-config-systems:base.json5"
+        "github>UbiqueInnovation/renovate-config-systems:base.json5",
+        // Public uetlib dependencies still migrate to public Maven Central coordinates.
+        "github>UbiqueInnovation/uetlib:renovate-migration.json5"
     ],
     "enabledManagers": [
         "ansible",
@@ -182,6 +184,121 @@
                 "pep621"
             ],
             "rangeStrategy": "update-lockfile"
+        },
+        // Internal parent replacements override the inherited public coordinate rules.
+        {
+            "description": "Use the Ubique-internal parent instead of ch.ubique:uetlib-parent",
+            "matchManagers": [
+                "maven"
+            ],
+            "matchDatasources": [
+                "maven"
+            ],
+            "matchDepTypes": [
+                "parent",
+                "parent-root"
+            ],
+            "matchRepositories": [
+                "!UbiqueInnovation/uetlib",
+                "!UbiqueInnovation/uetlib-*",
+                "!UbiqueInnovation/ubique-library-parent",
+                "!UbiqueInnovation/ubique-spring-boot-starter-parent"
+            ],
+            "matchPackageNames": [
+                "ch.ubique:uetlib-parent"
+            ],
+            "replacementName": "ch.ubique.internal:ubique-library-parent",
+            "replacementVersion": "2026.11.5",
+            "automerge": false,
+            "prBodyNotes": [
+                "This migration moves the Maven parent to ch.ubique.internal:ubique-library-parent. Verify that this release is available in Ubique Artifactory before merging."
+            ]
+        },
+        {
+            "description": "Use the Ubique-internal parent instead of ch.ubique:uetlib-spring-boot-starter-parent",
+            "matchManagers": [
+                "maven"
+            ],
+            "matchDatasources": [
+                "maven"
+            ],
+            "matchDepTypes": [
+                "parent",
+                "parent-root"
+            ],
+            "matchRepositories": [
+                "!UbiqueInnovation/uetlib",
+                "!UbiqueInnovation/uetlib-*",
+                "!UbiqueInnovation/ubique-library-parent",
+                "!UbiqueInnovation/ubique-spring-boot-starter-parent"
+            ],
+            "matchPackageNames": [
+                "ch.ubique:uetlib-spring-boot-starter-parent"
+            ],
+            "replacementName": "ch.ubique.internal:ubique-spring-boot-starter-parent",
+            "replacementVersion": "4.2.0-2026.11.8",
+            "automerge": false,
+            "prBodyNotes": [
+                "This migration moves the Maven parent to ch.ubique.internal:ubique-spring-boot-starter-parent. Verify that this release is available in Ubique Artifactory before merging."
+            ]
+        },
+        {
+            "description": "Use the Ubique-internal parent instead of ch.ubique.uetlib:uetlib-parent",
+            "matchManagers": [
+                "maven"
+            ],
+            "matchDatasources": [
+                "maven"
+            ],
+            "matchDepTypes": [
+                "parent",
+                "parent-root"
+            ],
+            "matchRepositories": [
+                "!UbiqueInnovation/uetlib",
+                "!UbiqueInnovation/uetlib-*",
+                "!UbiqueInnovation/ubique-library-parent",
+                "!UbiqueInnovation/ubique-spring-boot-starter-parent"
+            ],
+            "matchPackageNames": [
+                "ch.ubique.uetlib:uetlib-parent",
+                "ch.uetlib:uetlib-parent"
+            ],
+            "replacementName": "ch.ubique.internal:ubique-library-parent",
+            "replacementVersion": "2026.11.5",
+            "automerge": false,
+            "prBodyNotes": [
+                "This migration moves the Maven parent to ch.ubique.internal:ubique-library-parent. Verify that this release is available in Ubique Artifactory before merging."
+            ]
+        },
+        {
+            "description": "Use the Ubique-internal parent instead of ch.ubique.uetlib:uetlib-spring-boot-starter-parent",
+            "matchManagers": [
+                "maven"
+            ],
+            "matchDatasources": [
+                "maven"
+            ],
+            "matchDepTypes": [
+                "parent",
+                "parent-root"
+            ],
+            "matchRepositories": [
+                "!UbiqueInnovation/uetlib",
+                "!UbiqueInnovation/uetlib-*",
+                "!UbiqueInnovation/ubique-library-parent",
+                "!UbiqueInnovation/ubique-spring-boot-starter-parent"
+            ],
+            "matchPackageNames": [
+                "ch.ubique.uetlib:uetlib-spring-boot-starter-parent",
+                "ch.uetlib:uetlib-spring-boot-starter-parent"
+            ],
+            "replacementName": "ch.ubique.internal:ubique-spring-boot-starter-parent",
+            "replacementVersion": "4.2.0-2026.11.8",
+            "automerge": false,
+            "prBodyNotes": [
+                "This migration moves the Maven parent to ch.ubique.internal:ubique-spring-boot-starter-parent. Verify that this release is available in Ubique Artifactory before merging."
+            ]
         }
     ]
 }
